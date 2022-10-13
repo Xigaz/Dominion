@@ -10,6 +10,12 @@ public class Victory extends Card
         card = VictoryCards.valueOf(n);
     }
 
+    public Victory(VictoryCards c)
+    {
+        super(c.displayName, c.cost);
+        card = c;
+    }
+
     @Override
     public CardEffects play()
     {

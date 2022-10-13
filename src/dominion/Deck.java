@@ -14,12 +14,12 @@ public class Deck
 
         for(int i = 0; i < 7; i++ )
         {
-            deck.add(new Treasure("Copper"));
+            deck.add(new Treasure("COPPER"));
         }
 
         for(int i = 0; i < 3; i++ )
         {
-            deck.add(new Victory("Estate"));
+            deck.add(new Victory("ESTATE"));
         }
 
         Collections.shuffle(deck);

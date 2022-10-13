@@ -10,7 +10,11 @@ public class Treasure extends Card
         super(n, TreasureCards.valueOf(n).cost);
         card = TreasureCards.valueOf(n);
     }
-
+    public Treasure(TreasureCards c)
+    {
+        super(c.displayName, c.cost);
+        card = c;
+    }
     @Override
     public CardEffects play()
     {

@@ -10,6 +10,12 @@ public class Action extends Card
         card = ActionCards.valueOf(n);
     }
 
+    public Action(ActionCards c)
+    {
+        super(c.displayName, c.cost);
+        card = c;
+    }
+
     @Override
     public CardEffects play()
     {
