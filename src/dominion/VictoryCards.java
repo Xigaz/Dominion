@@ -20,7 +20,7 @@ public enum VictoryCards implements CardType
 
     int getNumberOfCards(int players)
     {
-        return cardsByPlayer[players];
+        return cardsByPlayer[players-2];
     }
 
     @Override

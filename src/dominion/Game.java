@@ -1,12 +1,14 @@
 package dominion;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Game
 {
     private ArrayList<Player> players;
     private Player currentPlayer;
     private final Board myBoard;
+    private boolean gameOver = false;
 
     public Game(String n)
     {
@@ -18,11 +20,32 @@ public class Game
         players.add(new Player("Luke", myBoard));
         players.add(new Player("Obi-wan", myBoard));
         players.add(new Player("Yoda", myBoard));
+        Collections.shuffle(players);
+        Collections.shuffle(players);
+        Collections.shuffle(players);
+        Collections.shuffle(players);
+        Collections.shuffle(players);
+        Collections.shuffle(players);
+        Collections.shuffle(players);
 
+    }
+
+    public void play()
+    {
+        currentPlayer = players.get(0);
+
+        while(!gameOver)
+        {
+            System.out.println(printStore());
+
+            if(myBoard.getIsGameOver())
+                gameOver = true;
+            break;
+        }
     }
 
     public String printStore()
     {
-        return "";
+        return myBoard.toString();
     }
 }

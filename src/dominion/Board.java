@@ -48,12 +48,35 @@ public class Board
         store.add(new Pile(TreasureCards.GOLD, nop));
     }
 
+    public boolean getIsGameOver()
+    {
+        return store.stream().filter(e -> e.getMyCard() == VictoryCards.PROVINCE).filter(e -> e.getCardsLeft() == 0).count() == 1 || store.stream().filter(e -> !(e.getMyCard() instanceof TreasureCards)).filter(e -> e.getCardsLeft() == 0).count() >= 3;
+    }
+
     @Override
     public String toString()
     {
         String returnValue = "";
+        CardType types = ActionCards.CELLER;
+
         for(int i = 0; i < store.size(); i++)
         {
+            if(store.get(i).getMyCard() instanceof VictoryCards && !(types instanceof VictoryCards))
+            {
+                types = VictoryCards.ESTATE;
+                returnValue += "\nVictory Cards:\n";
+            }
+            else if(store.get(i).getMyCard() instanceof TreasureCards && !(types instanceof TreasureCards))
+            {
+                types = TreasureCards.COPPER;
+                returnValue += "\nTresure Cards:\n";
+            }
+            else if(store.get(i).getMyCard() instanceof ActionCards && !(types instanceof ActionCards))
+            {
+                types = ActionCards.CELLER;
+                returnValue += "\nActions Cards:\n";
+            }
+
             returnValue += i + ") " + store.get(i).toString() + "\n";
         }
         return returnValue;

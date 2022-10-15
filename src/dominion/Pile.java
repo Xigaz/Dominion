@@ -84,6 +84,6 @@ public class Pile
     @Override
     public String toString()
     {
-        return myCard.toString();
+        return myCard.toString() + " (" + cards.size() + ")";
     }
 }
