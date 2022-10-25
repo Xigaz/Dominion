@@ -93,7 +93,8 @@ public class Game
             if(myBoard.getIsGameOver())
                 gameOver = true;
         }
-        System.out.println("HEY!!! THE GAME IS OVER! " + players.stream().max(Comparator.comparingInt(Player::getVPs)).get());
+        System.out.println("HEY!!! THE GAME IS OVER! " + players.stream().max(Comparator.comparingInt(Player::getVPs)).get()
+                + " is the WINNER!!!");
     }
 
     public String printStore()
