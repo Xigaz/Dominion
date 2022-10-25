@@ -22,10 +22,19 @@ public class Action extends Card
         CardEffects c = new CardEffects(card.cards, card.actions, card.buys, card.money);
         return c;
     }
-
+    @Override
+    public CardType getCardType()
+    {
+        return card;
+    }
     @Override
     public int getVP()
     {
         return 0;
+    }
+    @Override
+    public String toString()
+    {
+        return card.toString();
     }
 }

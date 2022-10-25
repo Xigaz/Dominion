@@ -1,6 +1,7 @@
 package dominion;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Pile
 {
@@ -80,10 +81,16 @@ public class Pile
         return myCard;
     }
 
-
-    @Override
+    public Card buy()
+    {
+        if(cards.size() > 0)
+            return cards.remove(0);
+        else
+            return null;
+    }
+     @Override
     public String toString()
     {
-        return myCard.toString() + " (" + cards.size() + ")";
+        return myCard.toString() + "(" + myCard.getCost() + " Cost)" + " (" + cards.size() + " left)";
     }
 }

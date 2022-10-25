@@ -9,9 +9,12 @@ public abstract class Card
     {
         name = n;
         cost = c;
+
     }
 
     public abstract CardEffects play();
+    public abstract CardType getCardType();
+
     public abstract int getVP();
 
     public String getName()

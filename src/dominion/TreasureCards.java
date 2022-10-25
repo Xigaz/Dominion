@@ -16,6 +16,10 @@ public enum TreasureCards implements CardType
         pileSize = noCards;
     }
 
+    public int getCost()
+    {
+        return cost;
+    }
     @Override
     public String toString()
     {

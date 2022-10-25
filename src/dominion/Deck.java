@@ -32,10 +32,24 @@ public class Deck
 
     }
 
+    /**
+     * Add an ArrayList of Cards to the discard pile.
+     * @param d - ArrayList of Cards to discard
+     */
     public void discard(ArrayList<Card> d)
     {
         discard.addAll(d);
     }
+
+    /**
+     * Add a Card to the discard pile
+     * @param d - Card to be added to the discard pile
+     */
+    public void discard(Card d)
+    {
+        discard.add(d);
+    }
+
 
     public Card draw()
     {
@@ -55,5 +69,22 @@ public class Deck
 
         return deck.size() > 0 ? deck.remove(0) : null;
 
+    }
+
+    private void combine()
+    {
+        deck.addAll(discard);
+        discard.clear();
+    }
+
+    public int getVPs()
+    {
+        int points = 0;
+        combine();
+        for(Card c : deck)
+        {
+            points += c.getVP();
+        }
+        return points;
     }
 }

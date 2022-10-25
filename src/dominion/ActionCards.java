@@ -25,6 +25,11 @@ public enum ActionCards implements CardType
         cost = c;
     }
 
+    public int getCost()
+    {
+        return cost;
+    }
+
 
     @Override
     public String toString()

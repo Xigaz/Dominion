@@ -24,8 +24,19 @@ public class Victory extends Card
     }
 
     @Override
+    public CardType getCardType()
+    {
+        return card;
+    }
+
+    @Override
     public int getVP()
     {
         return card.victoryPoints;
+    }
+    @Override
+    public String toString()
+    {
+        return card.toString();
     }
 }

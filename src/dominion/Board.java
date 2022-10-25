@@ -77,7 +77,7 @@ public class Board
                 returnValue += "\nActions Cards:\n";
             }
 
-            returnValue += i + ") " + store.get(i).toString() + "\n";
+            returnValue += i+1 + ") " + store.get(i).toString() + "\n";
         }
         return returnValue;
     }

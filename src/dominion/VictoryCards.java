@@ -23,6 +23,13 @@ public enum VictoryCards implements CardType
         return cardsByPlayer[players-2];
     }
 
+    public int getCost()
+    {
+        return cost;
+    }
+
+
+
     @Override
     public String toString()
     {

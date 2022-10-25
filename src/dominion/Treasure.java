@@ -22,9 +22,18 @@ public class Treasure extends Card
         c.setCoins(card.value);
         return c;
     }
-
+    @Override
+    public CardType getCardType()
+    {
+        return card;
+    }
     public int getVP()
     {
         return 0;
+    }
+    @Override
+    public String toString()
+    {
+        return card.toString();
     }
 }
