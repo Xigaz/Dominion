@@ -38,6 +38,8 @@ public class Game
         {
             System.out.println(printStore());
 
+            System.out.println(currentPlayer.getHand());
+
             if(myBoard.getIsGameOver())
                 gameOver = true;
             break;

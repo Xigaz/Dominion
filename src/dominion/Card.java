@@ -23,4 +23,9 @@ public abstract class Card
     {
         return cost;
     }
+    @Override
+    public String toString()
+    {
+        return name;
+    }
 }

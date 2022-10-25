@@ -53,7 +53,7 @@ public class Deck
             Collections.shuffle(deck);
         }
 
-        return deck.size() > 0 ? deck.get(0) : null;
+        return deck.size() > 0 ? deck.remove(0) : null;
 
     }
 }
